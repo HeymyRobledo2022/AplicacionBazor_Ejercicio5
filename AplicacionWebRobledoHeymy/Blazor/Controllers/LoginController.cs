@@ -6,6 +6,9 @@ using Microsoft.AspNetCore.Mvc;
 using Modelos;
 using System.Security.Claims;
 
+//Heymy Gabriela Robledo Rodriguez
+// 20191032574
+
 namespace Blazor.Controllers
 {
     public class LoginController : Controller
