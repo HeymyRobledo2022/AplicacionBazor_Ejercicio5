@@ -22,17 +22,15 @@ namespace Blazor.Controllers
         }
 
         [HttpPost("/account/login")]
-        //devuelve una tarea
         public async Task<IActionResult> Login(Login login)
-
-        {
+       {
             string rol = string.Empty;
             try
             {
                 bool usuarioValido = await _loginRepositorio.ValidarUsuario(login);
                 if (usuarioValido)
                 {
-                    Usuario user = await _usuarioRepositorio.GetPorCodigo(login.Usuario);
+                    Usuario user = await _usuarioRepositorio.GetPorCodigo(login.Codigo);
 
                     if (user.EstaActivo)
                     {

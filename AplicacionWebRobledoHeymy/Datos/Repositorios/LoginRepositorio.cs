@@ -32,7 +32,7 @@ namespace Datos.Repositorios
                 await conexion.OpenAsync();
                 string sql = "SELECT 1 FROM usuario WHERE Codigo = @Codigo AND Clave = @Clave;";
               
-                valido = await conexion.ExecuteScalarAsync<bool>(sql, new { login.Usuario, login.Clave });
+                valido = await conexion.ExecuteScalarAsync<bool>(sql, new { login.Codigo, login.Clave });
             }
             catch (Exception ex)
             {
